@@ -1,6 +1,7 @@
 export const typeDefs = `#graphql
   type Query{
       me: User
+      users: [User]
       posts: [Post]
   }
 
@@ -9,7 +10,11 @@ export const typeDefs = `#graphql
            name: String!
            email: String!
            password: String!
-      ): User
+      ): UserArgs
+  }
+
+  type UserArgs {
+      token: String
   }
 
   type Post {
